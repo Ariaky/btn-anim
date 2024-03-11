@@ -25,22 +25,22 @@
   }
   
   
-  .header-nav button {
+.header-nav button {
    /* background: none;*/
     color: inherit;
-    /*border: none;
-    padding: 0;
+    border: none;
+    /*padding: 0;
     font: inherit;
     cursor: pointer;
-    outline: inherit;
+    outline: inherit;*/
     position: relative;
-    */
+    
     display: flex;
     /*align-items: center;*/
     justify-content: center;
     text-decoration: none;
     /*overflow: hidden;*/
-    transition: 0.5s;
+    transition: 0.3s ease-in-out;
     letter-spacing: 3px;
     border-radius: 8px;
     box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
@@ -50,27 +50,31 @@
     font-size: 15px;
     line-height: 50px;
     margin-right: 20px;
-  }
+}
   
-  .header-nav button:hover {
+.header-nav button:hover {
     background-color: #b3eef1;
     color: #050801;
     box-shadow: 0 0 5px #b3eef1, 0 0 25px #b3eef1, 0 0 50px #b3eef1,
       0 0 200px #b3eef1;
     font-weight: bold;
     font-size: 20px;
-  }
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    border: 1px solid lightgrey;
+}
+
   
-  .header-nav button:active {
+.header-nav button:active {
     color: #77338d;
     font-weight: bold;
     font-size: 20px;
-  }
+}
   
-  .header-nav button:active span {
+.header-nav button:active span {
     position: absolute;
     display: block;
-  }
+}
   
   .header-nav button:active span:nth-of-type(1) {
     top: 0;
