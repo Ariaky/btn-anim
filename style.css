@@ -25,7 +25,7 @@
   }
   
   
-  .header-nav a {
+  .header-nav button {
    /* background: none;*/
     color: inherit;
     /*border: none;
@@ -52,7 +52,7 @@
     margin-right: 20px;
   }
   
-  .header-nav a:hover {
+  .header-nav button:hover {
     background-color: #b3eef1;
     color: #050801;
     box-shadow: 0 0 5px #b3eef1, 0 0 25px #b3eef1, 0 0 50px #b3eef1,
@@ -61,18 +61,18 @@
     font-size: 20px;
   }
   
-  .header-nav a:active {
-    color: #ff6b08;
+  .header-nav button:active {
+    color: #77338d;
     font-weight: bold;
     font-size: 20px;
   }
   
-  .header-nav a:active span {
+  .header-nav button:active span {
     position: absolute;
     display: block;
   }
   
-  .header-nav a:active span:nth-of-type(1) {
+  .header-nav button:active span:nth-of-type(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -82,7 +82,7 @@
     animation-delay: 0.25s;
   }
   
-  .header-nav a:active span:nth-of-type(2) {
+  .header-nav button:active span:nth-of-type(2) {
     top: -100;
     right: 0%;
     width: 2px;
@@ -92,7 +92,7 @@
     animation-delay: 0.25s;
   }
   
-  .header-nav a:active span:nth-of-type(3) {
+  .header-nav button:active span:nth-of-type(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -102,7 +102,7 @@
     animation-delay: 0.5s;
   }
   
-  .header-nav a:active span:nth-of-type(4) {
+  .header-nav button:active span:nth-of-type(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
