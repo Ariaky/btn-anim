@@ -65,18 +65,18 @@
 }
 
   
-.header-nav .button:active {
+.header-nav .button[data-active=true] {
     color: #77338d;
     font-weight: bold;
     font-size: 20px;
 }
   
-.header-nav .button:active span {
+.header-nav .button[data-active=true] span {
     position: absolute;
     display: block;
 }
   
-  .header-nav .button:active span:nth-of-type(1) {
+  .header-nav .button[data-active=true] span:nth-of-type(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -86,7 +86,7 @@
     animation-delay: 0.25s;
   }
   
-  .header-nav button:active span:nth-of-type(2) {
+  .header-nav button[data-active=true] span:nth-of-type(2) {
     top: -100;
     right: 0%;
     width: 2px;
