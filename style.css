@@ -120,7 +120,7 @@
     animation-delay: 0.75s;
   }
 
-  .heading-frame {
+  .headingFrame {
     display: grid;
     box-shadow: 0 3px 6px rgba(0,0,0,0.4);
     grid-template-columns: max-content auto;
