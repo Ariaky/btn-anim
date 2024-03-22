@@ -1,0 +1,111 @@
+:root {
+    --width: 400px;
+    --height: 250px;
+    --primary-color: #3084AC;
+    --border-color-hover: lighten(var(--primary-color), 80%);
+    --stroke: 2px;
+    --border: var(--stroke) solid darken(var(--primary-color), 10%);
+    --transition-duration: 100ms;
+    --pipeline-width: calc(var(--width) + var(--stroke));
+    --pipeline-height: calc(var(--height) + var(--stroke));
+    --pipes: 4;
+  }
+  
+  /* Functions */
+  @function border-pipeline($transition-duration, $pipe) {
+    @return calc(#{$transition-duration} * #{$pipe});
+  }
+  
+  /* Mixins */
+  @mixin border-animation($dimension, $easing, $pipe) {
+    transition: var(--transition-duration) $dimension $easing border-pipeline(var(--transition-duration), $pipe);
+    -webkit-transition: var(--transition-duration) $dimension $easing border-pipeline(var(--transition-duration), $pipe);
+  }
+  
+  /* Body */
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+  }
+  
+  /* Box */
+  .box {
+    width: var(--width);
+    height: var(--height);
+    background: var(--primary-color);
+    margin: auto;
+    border: var(--border);
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    transition: calc(var(--transition-duration) * var(--pipes)) + var(--transition-duration) ease;
+  }
+  
+  .box:before,
+  .box:after,
+  .box-inner:after,
+  .box-inner:before {
+    position: absolute;
+    content: '';
+    background: #fff;
+  }
+  
+  .box:before {
+    width: 0;
+    height: var(--stroke);
+    top: calc(-1 * var(--stroke));
+    left: calc(-1 * var(--stroke));
+    @include border-animation(width, ease, 3);
+  }
+  
+  .box:after {
+    width: var(--stroke);
+    height: 0;
+    top: calc(-1 * var(--stroke));
+    right: calc(-1 * var(--stroke));
+    @include border-animation(height, ease, 2);
+  }
+  
+  .box-inner:after {
+    width: 0;
+    height: var(--stroke);
+    bottom: calc(-1 * var(--stroke));
+    right: calc(-1 * var(--stroke));
+    @include border-animation(width, ease, 1);
+  }
+  
+  .box-inner:before {
+    width: var(--stroke);
+    height: 0;
+    bottom: calc(-1 * var(--stroke));
+    left: calc(-1 * var(--stroke));
+    @include border-animation(height, ease, 0);
+  }
+  
+  .box:hover {
+    border-color: transparent;
+    background: darken(var(--primary-color), 30%);
+  }
+  
+  .box:hover:before {
+    width: var(--pipeline-width);
+    @include border-animation(width, ease, 0);
+  }
+  
+  .box:hover:after {
+    height: var(--pipeline-height);
+    @include border-animation(height, ease, 1);
+  }
+  
+  .box:hover .box-inner:after {
+    width: var(--pipeline-width);
+    @include border-animation(width, ease, 2);
+  }
+  
+  .box:hover .box-inner:before {
+    height: var(--pipeline-height);
+    @include border-animation(height, ease, 3);
+  }
