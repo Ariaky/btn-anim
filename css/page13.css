@@ -1,0 +1,28 @@
+.container {
+    padding: 100px;
+}
+
+.image-circle {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    border-top: 2px dashed #ffcc00;
+    border-right: 2px dashed #ffcc00;
+    border-left: 2px dashed #395eda;
+    border-bottom: 2px dashed #395eda;
+    padding: 10px;
+    animation: spin 10s infinite linear;
+}
+.image-circle img {
+    animation: spin 10s infinite reverse linear;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
