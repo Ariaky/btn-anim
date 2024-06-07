@@ -54,6 +54,7 @@ input {
   }
   .button:hover {
     --fill: var(--background-hover);
+    color: red;
     
   }
   
